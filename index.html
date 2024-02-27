@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>coming soon page - easy tutorials</title>
+  <link rel="stylesheet" href="index.css" type="text/css">
+</head>
+<body>
+  <div class="container"></div>
+  <div class="content">
+    <h1>coming soon</h1>
+    <p>our website is under construction.</p>
+    <h1>we're <span>lunching</span>Soon</h1>
+    <div class="launch_time">
+      <div>
+        <p id="weeks">00</p>
+        <p>weeks</p>
+      </div>
+      <div>
+        <p id="days">00</p>
+        <p>days</p>
+      </div>
+      <div>
+        <p id="hours">00</p>
+        <p>hours</p>
+      </div>
+      <div>
+        <p id="minutes">00</p>
+        <p>minutes</p>
+      </div>
+      <div>
+        <p id="seconds">00</p>
+        <p>seconds</p>
+      </div>
+    </div>
+    <button type="button">learn more<img src=""></button>
+    <img src="https://pngimg.com/d/rockets_PNG101054.png" class="rocket1">
+    <img src="https://pngimg.com/d/rockets_PNG101054.png" class="rocket2">
+  </div>
+  <script>
+    var countDownDate = new Date("oct 1, 2024 00:00:00").getTime();
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7));
+      var days = Math.floor((distance % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("weeks").innerHTML = weeks;
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("weeks").innerHTML = "EXPIRED";
+        document.getElementById("days").innerHTML = "EXPIRED";
+        document.getElementById("hours").innerHTML = "EXPIRED";
+        document.getElementById("minutes").innerHTML = "EXPIRED";
+        document.getElementById("seconds").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
